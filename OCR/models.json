@@ -1,0 +1,19 @@
+[
+  {
+    "UUID": "97CF892F-F157-4DFB-8329-2623BFC58E49",
+    "description": "Segate Enterprise Capacity 3.5 HDD 6TB",
+    "vendor": "Segate",
+    "identifiers": {
+      "vendor": "^(Seagate Technology LLC)$",
+      "model_description": "^(Enterprise Capacity 3.5 HDD).*$",
+      "model_revision": "^Enterprise Capacity 3.5 HDD\\s(.*)$",
+      "sku": "^(ST.*)$",
+      "serial": "SN:\\s(.*)$",
+      "mpn": "^PN:\\s(.*)$",
+      "firmware_rev": "^FW\\s(.*)$",
+      "wwn": "WWN:\\s(.*)$",
+      "psid": "^PSID:\\s(.*)$",
+      "capacity": "^(\\dTB)$"
+    }
+  }
+]
