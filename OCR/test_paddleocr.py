@@ -400,7 +400,7 @@ if __name__ == "__main__":
     )
     
     # Image to process
-    image_path = "t_0.png"
+    image_path = "thing1.png"
     
     print(f"\nProcessing image: {image_path}")
     print("=" * 60)
@@ -444,7 +444,7 @@ if __name__ == "__main__":
             print(f"  - {item['text']} (confidence: {item['confidence']:.3f})")
         
         # high-confidence texts
-        confidence_threshold = 0.98  # Adjust this threshold as needed
+        confidence_threshold = 0.95  # Adjust this threshold as needed
         high_confidence_texts = print_high_confidence_texts(
             best_results, confidence_threshold=confidence_threshold
         )
@@ -462,11 +462,34 @@ if __name__ == "__main__":
         # else:
         #     print("No high-confidence texts found")
         # print("=" * 60)
+        
+        # Create list of split texts (by spaces)
         text_list = []
         if split_high_confidence_texts:
             for item in split_high_confidence_texts:
                 text_list.append(item['text'])
-        print(f"collected txt items from the image: {text_list}")
+        print(f"collected txt items from the image (split by spaces): {text_list}")
+
+        # Save split text_list to a .txt file
+        output_txt_file = "test_list.txt"
+        with open(output_txt_file, 'w', encoding='utf-8') as f:
+            for text in text_list:
+                f.write(text + '\n')
+        print(f"Text list (split by spaces) saved to: {output_txt_file}")
+        
+        # Create list of original texts (not split by spaces)
+        original_text_list = []
+        if high_confidence_texts:
+            for item in high_confidence_texts:
+                original_text_list.append(item['text'])
+        print(f"collected txt items from the image (not split): {original_text_list}")
+
+        # Save original text_list to a separate .txt file
+        output_txt_file_original = "test_list_original.txt"
+        with open(output_txt_file_original, 'w', encoding='utf-8') as f:
+            for text in original_text_list:
+                f.write(text + '\n')
+        print(f"Text list (not split by spaces) saved to: {output_txt_file_original}")
         
         # save annotated image
         print("\n" + "=" * 60)
