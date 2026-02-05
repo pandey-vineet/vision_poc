@@ -1,0 +1,11 @@
+# Image processing
+opencv-python>=4.5.0,<5.0.0
+numpy>=1.19.0,<2.0.0
+
+# OCR libraries
+pytesseract>=0.3.7
+paddlepaddle>=2.4.0
+paddleocr>=2.7.0
+
+# Standard library dependencies (usually included, but listed for completeness)
+# json, re, collections, os, typing - all part of Python standard library
